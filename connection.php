@@ -14,7 +14,7 @@ try{
     $db = mysqli_connect($host, $username, $password, $dbname);
 }
 // If there is an error in connecting to the database
-catch(mysqli_sql_exception $error) {
+catch(mysqli_sql_exception $error){
     echo "Failed to connect to MySQL<br>";
     echo "Error Code: " . $error->getCode() . "<br>";
     echo "Error Message: " . $error->getMessage() . "<br>";
