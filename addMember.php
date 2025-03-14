@@ -23,11 +23,12 @@
                 Second name: <input type="text" name="lastname"><br>
                 Phone Number: <input type="text" name="phone"><br>
                 <input type="submit" name="submit" value="Add Member"><br>
+            </from>
 
             <?php
                 // If submitted do this
                 if(isset($_POST['submit'])){
-                    // Gets id from form
+                    // Gets id row from the form
                     $id = addslashes($_POST['id']);
                     $sql = "SELECT * FROM member WHERE id = '$id';";
                     $result = mysqli_query($db, $sql);
