@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>Book Club</title>
+    <title>Add a new Member</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Book Club</h1>
+        <h1>Add a new Member</h1>
             <ul>
-                <li><a href="addMember.php">Add a new Member</a></li>
+                <li><a href="index.php">View details for all Members</a></li>
                 <li><a href="updateMember.php">Update Member Details</a></li>
                 <li><a href="deleteMember.php">Delete a Member</a></li>
             </ul>
@@ -22,7 +22,7 @@
                 First name: <input type="text" name="firstname"><br>
                 Second name: <input type="text" name="lastname"><br>
                 Phone Number: <input type="text" name="phone"><br>
-                <input type="submit" name="submit" value="REGISTER"><br>
+                <input type="submit" name="submit" value="Add Member"><br>
 
             <?php
                 // If submitted do this
