@@ -27,13 +27,21 @@ session_start();
     <a href='logout.php'>Log Out</a><br>
 
     <?php
-        
-        //Do not modify code above this line
-       
-        //TASK 5.2
-        //Add code that outputs a personalised greeting for the logged in admin (should contain the username) 
-        
-        //Do not modify code after this line
+        // If the user type is correct, it displays a message; otherwise, it redirects to index.php
+        if(isset($_SESSION['user'])){
+            if($_SESSION['user']['usertype'] == 'admin'){
+                $username = $_SESSION['user']['username'];
+                echo "<br>Welcome " . $username . ", to the admin home page!";
+            }
+            else{
+                header('location: index.php');
+                exit();
+            }
+        }
+        else{
+            header('location: index.php');
+            exit();
+        }
     ?>
 
     </body>
