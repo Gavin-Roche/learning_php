@@ -27,7 +27,7 @@ include ('connection.php');
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Practical 7</title>
+    <title>Practical 8</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -43,11 +43,45 @@ include ('connection.php');
 
 
 <?php
-    //Do not modify code above this line
-        
-    //Add your code for Task 4 here
-        
-    //Do not modify code after this line
+    // If the login button is pressed, this retrieves records from the database for the entered username.
+    if(isset($_POST['loginBtn'])){
+        $username = $_POST['username'];
+        $sql = "SELECT * FROM user WHERE username = '$username';";
+        $result = mysqli_query($db, $sql);
+
+        // Checks if the record exists
+        if($result){
+            if(mysqli_num_rows($result) === 1){
+                $password = $_POST['password'];
+                $hashed_password = hash('ripemd160', $password);
+
+                $row = mysqli_fetch_assoc($result);
+                mysqli_close($db);
+
+                // If the password is correct, it sets the session array and redirects to the correct page based on the user type.
+                if ($row['password'] === $hashed_password){
+                    $_SESSION['user'] = $row;
+
+                    if($_SESSION['user']['usertype'] == 'admin'){
+                        header('location: adminHome.php');
+                        exit();
+                    }
+                    else{
+                        header('location: employeeHome.php');
+                        exit();
+                    }
+                }
+                // If the password is incorrect
+                else{
+                    echo "Password incorrect please try again";
+                }
+            }
+            // If the username is incorrect
+            else{
+                echo "Username not found please try again";
+            }
+        }
+    }
 ?>
 
     </body>
