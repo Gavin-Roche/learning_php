@@ -7,7 +7,7 @@ The Parameters must be changed to accommodate the database that is set up in the
 $host = '127.0.0.1';
 $username = 'root';
 $password = '';
-$dbname = 'k00294911_bookclub';
+$dbname = 'bookclub';
 
 // Tries to make a database connection
 try{
