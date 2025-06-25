@@ -1,0 +1,2 @@
+# Learning PHP
+This repository holds the PHP I wrote when I was learning PHP. It has simple scripts that helped me understand basic concepts like functions, form handling, and working with arrays. Most of the code here was written as practice or part of small tasks while I was getting used to how PHP works.

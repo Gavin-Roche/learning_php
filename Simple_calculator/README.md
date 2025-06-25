@@ -1,0 +1,2 @@
+# Maths Operations
+This PHP script performs basic arithmetic operations based on user input submitted via a form. It can add or subtract two numbers and display the result. Additionally, it can generate a multiplication table for a given number up to a specified limit. If no form data is submitted, it prompts the user to submit the form and provides a link back to the menu page. Results and outputs are displayed directly on the webpage.
